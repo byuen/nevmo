@@ -38,7 +38,7 @@ public class TransactionService {
 
             return transactionRepository.save(transaction);
         } catch (Exception e) {
-            //TODO: ROLLBACK,LOG AND CREATE GLOBAL ERROR HANDLER
+            //TODO: MAKE TRANSACTIONAL -- ROLLBACK,LOG AND CREATE GLOBAL ERROR HANDLER
             return null;
         }
     }

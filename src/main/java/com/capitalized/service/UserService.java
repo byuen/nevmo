@@ -3,6 +3,7 @@ package com.capitalized.service;
 import com.capitalized.model.Account;
 import com.capitalized.model.User;
 import com.capitalized.model.request.AccountRequest;
+import com.capitalized.model.request.LoginRequest;
 import com.capitalized.model.request.UserRequest;
 import com.capitalized.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,5 +38,10 @@ public class UserService {
            return Optional.of(userRepository.save(user));
         }
         return Optional.empty();
+    }
+
+    public String loginUser(LoginRequest loginRequest) {
+        //TODO
+        return null;
     }
 }
