@@ -30,12 +30,26 @@ public class RequestController {
     @Operation(summary = "Create Request", description = "API to create Request")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Created Request", content = {@Content(mediaType = "application/json",
-                    schema = @Schema(implementation = Transaction.class))}),
+                    schema = @Schema(implementation = Request.class))}),
             @ApiResponse(responseCode = "404", description = "not found"),
             @ApiResponse(responseCode = "500", description = "Unexpected Error")
     })
     public ResponseEntity<?> createRequest(@RequestBody RequestRequest requestRequest) {
         //TODO: CREATE REQUEST
+        return null;
+    }
+
+
+    @RequestMapping(method = RequestMethod.PUT, consumes = {"application/json"}, produces = {"application/json"})
+    @Operation(summary = "Respond to  Request", description = "API to Respond Request")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Respond Request", content = {@Content(mediaType = "application/json",
+                    schema = @Schema(implementation = Request.class))}),
+            @ApiResponse(responseCode = "404", description = "not found"),
+            @ApiResponse(responseCode = "500", description = "Unexpected Error")
+    })
+    public ResponseEntity<?> respondRequest(@RequestBody RequestRequest requestRequest) {
+        //TODO: CREATE RESPOND REQUEST - APPROVE/DENY/CANCEL REQUEST
         return null;
     }
 }

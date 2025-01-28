@@ -101,7 +101,7 @@ public class UserController {
 
     }
 
-    @RequestMapping(path = "/{id}/requests", method = RequestMethod.GET, produces = {"application/json"})
+    @RequestMapping(path = "/{id}/receivedRequests", method = RequestMethod.GET, produces = {"application/json"})
     @Operation(summary = "get User Requests", description = "API to get user requests")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "get user requests", content = {@Content(mediaType = "application/json",
@@ -109,8 +109,21 @@ public class UserController {
             @ApiResponse(responseCode = "404", description = "not found"),
             @ApiResponse(responseCode = "500", description = "Unexpected Error")
     })
-    public ResponseEntity<User> getRequests(@PathVariable("id") String id) {
-        //TODO: GET USER REQUESTS
+    public ResponseEntity<User> getReceivedRequests(@PathVariable("id") String id) {
+        //TODO: GET USER RECEIVED REQUESTS
+        return null;
+    }
+
+    @RequestMapping(path = "/{id}/sentRequests", method = RequestMethod.GET, produces = {"application/json"})
+    @Operation(summary = "get Sent Requests", description = "API to get user Sent requests")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "get user requests", content = {@Content(mediaType = "application/json",
+                    schema = @Schema(implementation = User.class))}),
+            @ApiResponse(responseCode = "404", description = "not found"),
+            @ApiResponse(responseCode = "500", description = "Unexpected Error")
+    })
+    public ResponseEntity<User> getSentRequests(@PathVariable("id") String id) {
+        //TODO: GET USER SENT REQUESTS
         return null;
     }
 
